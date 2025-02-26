@@ -1,27 +1,37 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "preserve", // Для сохранения JSX без преобразования
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], // Для поддержки DOM API
+    "allowJs": true, // Для смешанных файлов .js и .jsx
+    "skipLibCheck": true, // Пропуск проверки библиотек
+    "strict": true, // Включение строгого режима TypeScript
+    "esModuleInterop": true, // Совместимость с ES-модулями
+    "moduleResolution": "node", // Указание Node.js резолвера
+    "module": "esnext", // Использование ES модулей
+    "target": "esnext", // Современная версия JavaScript
+    "resolveJsonModule": true, // Для импорта JSON
+    "isolatedModules": true, // Для работы с Next.js
+    "noEmit": true // Отключить вывод JS файлов
+    ,
     "incremental": true,
     "plugins": [
       {
-        "name": "next"
+        "name": "next" 
       }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    "types/**/*.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

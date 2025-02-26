@@ -1,7 +1,16 @@
+import withLess from 'next-with-less';
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
-export default nextConfig;
+export default withLess({
+  ...nextConfig,
+  lessLoaderOptions: {
+    lessOptions: {
+      javascriptEnabled: true,
+    },
+  },
+});
